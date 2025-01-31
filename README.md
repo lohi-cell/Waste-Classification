@@ -13,8 +13,8 @@ https://www.kaggle.com/datasets/techsash/waste-classification-data/data
 # About the dataset
 This dataset consists of labeled images of plastic waste categorized as **Organic** and **Recyclable**. It is structured into separate folders for training and testing.
 
-- **TRAIN**: Contains images for training the model.(22564 images )
-- **TEST**: Contains images for evaluating model performance.(2513 images)
+- **TRAIN**: Contains images for training the model.(22,564 images )
+- **TEST**: Contains images for evaluating model performance.(2,513 images)
 
 ### Installations
 Ensure the necessary dependencies are installed before proceeding. These include:
@@ -54,6 +54,49 @@ To understand the dataset distribution and features, we use the following visual
 
 ### Explanation
 This week covers the preprocessing of the dataset to ensure it is in the correct format for training a CNN model. The preprocessing steps include resizing images, normalizing pixel values, and encoding labels to facilitate effective model training.
+
+## Week 2
+## Overview
+In Week 2, we focused on building and training a Convolutional Neural Network (CNN) to classify plastic waste images into two categories: **Organic** and **Recyclable**. The model was built using TensorFlow and Keras.
+
+## Key Modules
+
+### 1. **Sequential Model**
+The CNN model is built using the **Sequential** API. It consists of:
+- **Conv2D Layers**: These layers detect features like edges and textures in images.
+- **MaxPooling Layers**: Reduce the size of the feature maps to speed up training and prevent overfitting.
+- **Flatten Layer**: Converts the 2D feature maps to a 1D vector for the fully connected layers.
+- **Dense Layers**: Fully connected layers make predictions based on the learned features.
+- **Dropout Layers**: Helps prevent overfitting by randomly disabling neurons during training.
+- **Activation Functions**: ReLU for hidden layers and sigmoid for the output layer to predict binary categories.
+
+### 2. **ImageDataGenerator**
+Used for **data augmentation** and **rescaling** images:
+- **Training**: Rescale pixel values to [0,1] for the model.
+- **Testing**: Same rescaling applied to the test data.
+
+### 3. **Model Training**
+- **fit()** method is used to train the model for 10 epochs.
+- The model uses **binary cross-entropy** loss and the **Adam optimizer** for training.
+- **Batch size** is set to 64, and **accuracy** is tracked during training.
+
+The model was trained using an `ImageDataGenerator` to efficiently load and preprocess images. Images were rescaled to the range [0, 1] to improve model performance. The model architecture consists of convolutional layers for feature extraction, max pooling for dimensionality reduction, and dense layers for classification.  
+
+The model was trained for 10 epochs using the Adam optimizer and binary cross-entropy loss function.
+
+### 4. **Model Evaluation**
+After training, the model's performance is evaluated on test data, measuring **accuracy** and **loss**.Performance was evaluated on a validation set using the accuracy metric.
+
+### 5. **Prediction**
+The trained model predicts the probability of an input image belonging to either the 'Organic' or 'Recyclable' class. The class with the higher probability is the predicted outcome.
+
+## Conclusion
+This week, we built a CNN model to classify plastic waste images. The model was trained, evaluated, and is now capable of predicting new images into the appropriate categories.
+
+## Performance Optimization
+**Note:** It is recommended to use Google Colab with a **T4 GPU** for faster processing. To enable GPU in Colab:
+1. Navigate to **Runtime > Change runtime type**.
+2. Select **Hardware accelerator > GPU**.
 
 ## Usage
 1. Clone the repository.
