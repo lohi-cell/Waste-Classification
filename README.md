@@ -16,6 +16,10 @@ This dataset consists of labeled images of plastic waste categorized as **Organi
 - **TRAIN**: Contains images for training the model.(22,564 images )
 - **TEST**: Contains images for evaluating model performance.(2,513 images)
 
+## System Architecture
+![CNN System Architecture](https://github.com/lohi-cell/Waste-Classification/blob/90e2ada64de540e77d107ab7c62e48919e1e2254/images/SystemDesign.jpg)
+
+
 ## Installations
 Ensure the necessary dependencies are installed before proceeding. These include:
 - **opencv-python**: For image processing and manipulation.
@@ -58,6 +62,15 @@ This week covers the preprocessing of the dataset to ensure it is in the correct
 ## Week 2
 ## Overview
 In Week 2, we focused on building and training a Convolutional Neural Network (CNN) to classify plastic waste images into two categories: **Organic** and **Recyclable**. The model was built using TensorFlow and Keras.
+
+## Convolutional Neural Network (CNN)
+A **Convolutional Neural Network (CNN)** is a type of deep learning algorithm used mainly for image analysis. It consists of multiple layers:  
+1. **Convolutional layers** to detect features (edges, shapes, etc.) from images.
+2. **Pooling layers** to downsample the feature maps and reduce dimensionality.
+3. **Fully connected layers** to classify or predict based on the extracted features.  
+CNNs are highly efficient in tasks like image classification, object detection, and facial recognition due to their ability to automatically extract and learn relevant features.
+
+![Image Alt Text](https://github.com/lohi-cell/Waste-Classification/blob/90e2ada64de540e77d107ab7c62e48919e1e2254/images/CNN-based-waste-management-Model.jpg)
 
 ## Key Modules
 
