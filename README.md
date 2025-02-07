@@ -116,7 +116,7 @@ The confusion matrix shows a high number of correct predictions for both Organic
 ## 3. **Loss Graph**
 The training and validation loss graphs display a steady decrease, indicating effective learning. The close alignment between the two suggests the model is neither overfitting nor underfitting.
 
-## 4. ** Model Prediction Accuracy **
+## 4. **Model Prediction Accuracy**
 The model achieved 95.1% accuracy on both validation and test datasets, demonstrating strong generalization and reliable performance in classifying waste images.
 
 ## Performance Optimization
