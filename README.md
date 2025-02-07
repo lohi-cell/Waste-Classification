@@ -106,6 +106,19 @@ The trained model predicts the probability of an input image belonging to either
 ## Conclusion
 This week, we built a CNN model to classify plastic waste images. The model was trained, evaluated, and is now capable of predicting new images into the appropriate categories.
 
+## Week 3
+## 1.**Accuracy Graph**
+The accuracy graphs show consistent growth across epochs for both training and validation, highlighting the model’s stable and improving performance.
+
+## 2. **Confusion Matrix**
+The confusion matrix shows a high number of correct predictions for both Organic and Recyclable Waste, with very few misclassifications, confirming the model's effectiveness.
+
+## 3. **Loss Graph**
+The training and validation loss graphs display a steady decrease, indicating effective learning. The close alignment between the two suggests the model is neither overfitting nor underfitting.
+
+## 4. ** Model Prediction Accuracy **
+The model achieved 95.1% accuracy on both validation and test datasets, demonstrating strong generalization and reliable performance in classifying waste images.
+
 ## Performance Optimization
 **Note:** It is recommended to use Google Colab with a **T4 GPU** for faster processing. To enable GPU in Colab:
 1. Navigate to **Runtime > Change runtime type**.
