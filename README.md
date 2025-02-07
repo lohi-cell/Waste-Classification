@@ -1,126 +1,73 @@
 # Plastic Waste Classification Using CNN
-To develop a CNN model to classify images of plastic waste into different categories.
 
-## Week 1
-## Overview
-This week focuses on setting up the dataset and understanding the basic preprocessing steps required for training the model. The dataset is sourced from Kaggle and is utilized to classify waste images into categories such as organic and recyclable waste.
+## Project Overview
+This project focuses on developing a Convolutional Neural Network (CNN) to classify images of plastic waste into different categories such as Organic and Recyclable. The dataset is sourced from Kaggle, containing labeled images structured into separate folders for training and testing.
 
-## Dataset
-The dataset used is from Kaggle.The dataset contains labeled images of various plastic waste categories. You can use public datasets such as:
-https://www.kaggle.com/datasets/techsash/waste-classification-data/data
+### Dataset
+The dataset used is from Kaggle and can be accessed [here](https://www.kaggle.com/datasets/techsash/waste-classification-data/data). It includes:
+- **TRAIN:** 22,564 images for training the model.
+- **TEST:** 2,513 images for evaluating model performance.
 
-
-## About the dataset
-This dataset consists of labeled images of plastic waste categorized as **Organic** and **Recyclable**. It is structured into separate folders for training and testing.
-
-- **TRAIN**: Contains images for training the model.(22,564 images )
-- **TEST**: Contains images for evaluating model performance.(2,513 images)
-
-## System Architecture
-![CNN System Architecture](https://github.com/lohi-cell/Waste-Classification/blob/90e2ada64de540e77d107ab7c62e48919e1e2254/images/SystemDesign.jpg)
-
-
-## Installations
-Ensure the necessary dependencies are installed before proceeding. These include:
-- **opencv-python**: For image processing and manipulation.
-- **tensorflow**: For building and training the CNN model.
-- **numpy**: For handling numerical operations and arrays.
-- **pandas**: For data manipulation and organization.
-- **matplotlib**: For visualizing data and graphs.
-- **tqdm**: For displaying progress bars during data processing.
+### Tools and Libraries
+Ensure the following dependencies are installed:
+- **opencv-python:** For image processing and manipulation.
+- **tensorflow:** For building and training the CNN model.
+- **numpy:** For handling numerical operations and arrays.
+- **pandas:** For data manipulation and organization.
+- **matplotlib:** For visualizing data and graphs.
+- **tqdm:** For displaying progress bars during data processing.
 
 Run the following command to install all dependencies:
-```sh
+```bash
 pip install opencv-python tensorflow numpy pandas matplotlib tqdm
 ```
 
 ## Modules
-- **Data Preprocessing**: Preparing images for input into the CNN model.
-- **Data Visualization**: Exploring the dataset through visual representations.
-- **Model Building**: Setting up the CNN architecture for classification.
 
-## Data Preprocessing
-Data preprocessing involves the following steps:
-1. **Loading Images**: Read images from the dataset directory.
-2. **Resizing**: Resize images to a uniform shape suitable for the model.
-3. **Color Conversion**: Convert images from BGR to RGB format.
-4. **Normalization**: Scale pixel values to the range [0,1] to improve model performance.
-5. **Label Encoding**: Convert categorical labels (e.g., 'Organic', 'Recyclable') into numerical values.
-6. **Splitting Data**: Divide the dataset into training and testing sets.
+### Data Preprocessing
+Data preprocessing involves:
+1. **Loading Images:** Reading images from the dataset directory.
+2. **Resizing:** Standardizing image dimensions.
+3. **Color Conversion:** Converting images from BGR to RGB.
+4. **Normalization:** Scaling pixel values to [0,1].
+5. **Label Encoding:** Converting 'Organic' and 'Recyclable' labels into numerical values.
+6. **Splitting Data:** Dividing data into training and testing sets.
 
-## Data Visualization
-To understand the dataset distribution and features, we use the following visualizations:
-1. **Class Distribution Pie Chart**
-   - A pie chart is plotted to display the proportion of **Organic** and **Recyclable** waste images in the dataset.
+### Data Visualization
+To understand the dataset distribution and features, the following visualizations were used:
+- **Class Distribution Pie Chart:** Displays the proportion of Organic and Recyclable waste images.
+- **Image Histogram:** Analyzes pixel intensity distribution to understand color characteristics.
 
-2. **Image Histogram**
-   - A histogram is used to analyze the pixel intensity distribution across an image, helping to understand the color characteristics of the dataset.
+### Model Building
+The CNN model architecture includes:
+1. **Convolutional Layers (Conv2D):** Detect features like edges and textures.
+2. **MaxPooling Layers:** Reduce dimensionality and prevent overfitting.
+3. **Flatten Layer:** Converts 2D feature maps to 1D vectors.
+4. **Dense Layers:** Fully connected layers for prediction.
+5. **Dropout Layers:** Prevent overfitting by randomly disabling neurons.
+6. **Activation Functions:** ReLU for hidden layers, sigmoid for output.
 
-## Conclusion
-This week covers the preprocessing of the dataset to ensure it is in the correct format for training a CNN model. The preprocessing steps include resizing images, normalizing pixel values, and encoding labels to facilitate effective model training.
+### Model Training
+- The model was trained using **ImageDataGenerator** for rescaling and augmenting images.
+- The **fit()** method was used to train the model for **7 epochs** with a **batch size of 64**.
+- The model used **binary cross-entropy loss** and the **Adam optimizer**.
 
-## Week 2
-## Overview
-In Week 2, we focused on building and training a Convolutional Neural Network (CNN) to classify plastic waste images into two categories: **Organic** and **Recyclable**. The model was built using TensorFlow and Keras.
+### Model Evaluation
+- Performance was evaluated using accuracy and loss metrics.
+- A **confusion matrix** confirmed high prediction accuracy with minimal misclassifications.
 
-## Convolutional Neural Network (CNN)
-A **Convolutional Neural Network (CNN)** is a type of deep learning algorithm used mainly for image analysis. It consists of multiple layers:  
-1. **Convolutional layers** to detect features (edges, shapes, etc.) from images.
-2. **Pooling layers** to downsample the feature maps and reduce dimensionality.
-3. **Fully connected layers** to classify or predict based on the extracted features.  
-CNNs are highly efficient in tasks like image classification, object detection, and facial recognition due to their ability to automatically extract and learn relevant features.
+### Predictions
+The trained model predicts whether an image belongs to the 'Organic' or 'Recyclable' category based on the probability score.
 
-![Image Alt Text](https://github.com/lohi-cell/Waste-Classification/blob/90e2ada64de540e77d107ab7c62e48919e1e2254/images/CNN-based-waste-management-Model.jpg)
-
-## Key Modules
-
-## 1. **Sequential Model**
-The CNN model is built using the **Sequential** API. It consists of:
-- **Conv2D Layers**: These layers detect features like edges and textures in images.
-- **MaxPooling Layers**: Reduce the size of the feature maps to speed up training and prevent overfitting.
-- **Flatten Layer**: Converts the 2D feature maps to a 1D vector for the fully connected layers.
-- **Dense Layers**: Fully connected layers make predictions based on the learned features.
-- **Dropout Layers**: Helps prevent overfitting by randomly disabling neurons during training.
-- **Activation Functions**: ReLU for hidden layers and sigmoid for the output layer to predict binary categories.
-
-## 2. **ImageDataGenerator**
-Used for **data augmentation** and **rescaling** images:
-- **Training**: Rescale pixel values to [0,1] for the model.
-- **Testing**: Same rescaling applied to the test data.
-
-## 3. **Model Training**
-- **fit()** method is used to train the model for 10 epochs.
-- The model uses **binary cross-entropy** loss and the **Adam optimizer** for training.
-- **Batch size** is set to 64, and **accuracy** is tracked during training.
-
-The model was trained using an `ImageDataGenerator` to efficiently load and preprocess images. Images were rescaled to the range [0, 1] to improve model performance. The model architecture consists of convolutional layers for feature extraction, max pooling for dimensionality reduction, and dense layers for classification.  
-
-The model was trained for 10 epochs using the Adam optimizer and binary cross-entropy loss function.
-
-## 4. **Model Evaluation**
-After training, the model's performance is evaluated on test data, measuring **accuracy** and **loss**.Performance was evaluated on a validation set using the accuracy metric.
-
-## 5. **Prediction**
-The trained model predicts the probability of an input image belonging to either the 'Organic' or 'Recyclable' class. The class with the higher probability is the predicted outcome.
-
-## Conclusion
-This week, we built a CNN model to classify plastic waste images. The model was trained, evaluated, and is now capable of predicting new images into the appropriate categories.
-
-## Week 3
-## 1.**Accuracy Graph**
-The accuracy graphs show consistent growth across epochs for both training and validation, highlighting the model’s stable and improving performance.
-
-## 2. **Confusion Matrix**
-The confusion matrix shows a high number of correct predictions for both Organic and Recyclable Waste, with very few misclassifications, confirming the model's effectiveness.
-
-## 3. **Loss Graph**
-The training and validation loss graphs display a steady decrease, indicating effective learning. The close alignment between the two suggests the model is neither overfitting nor underfitting.
-
-## 4. **Model Prediction Accuracy**
-The model achieved 95.1% accuracy on both validation and test datasets, demonstrating strong generalization and reliable performance in classifying waste images.
+## Results
+- **Accuracy:** The model achieved **95.1%** accuracy on both validation and test datasets.
+- **Accuracy Graph:** Shows consistent improvement across epochs.
+- **Loss Graph:** Displays steady loss reduction, indicating effective learning.
+- **Confusion Matrix:** Demonstrates high precision with minimal errors.
 
 ## Performance Optimization
-**Note:** It is recommended to use Google Colab with a **T4 GPU** for faster processing. To enable GPU in Colab:
+**Note:** It is recommended to use **Google Colab** with a **T4 GPU** for faster processing. To enable GPU in Colab:
+
 1. Navigate to **Runtime > Change runtime type**.
 2. Select **T4 GPU**.
 
@@ -133,5 +80,7 @@ The model achieved 95.1% accuracy on both validation and test datasets, demonstr
 Feel free to fork this repository and submit pull requests.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
+
+
 
