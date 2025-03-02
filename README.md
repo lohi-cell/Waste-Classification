@@ -5,6 +5,7 @@
 ## 🌟 **Project Overview**  
 This project focuses on developing a **Convolutional Neural Network (CNN)** to classify images of plastic waste into different categories such as ♻️ **Recyclable** and 🌱 **Organic**. The dataset is sourced from **Kaggle**, containing labeled images structured into separate folders for training and testing.  
 
+🔗 **Live Demo:** [Try it here 🚀](https://waste-classification-kk3cuwisywcyphylpgh9o2.streamlit.app/#77af9153)  
 ---
 
 ### 📂 **Dataset**  
