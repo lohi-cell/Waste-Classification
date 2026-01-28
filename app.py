@@ -18,7 +18,7 @@ st.sidebar.info(
 )
 
 # Google Drive file ID (replace with your file ID)
-file_id = "1NGgnO4nTFRRk55z7fgm_eFl6kgeLXr-1"
+file_id = "1Svmzy7p2bZRY4jeye_IK-a-LytQtsg8h"
 model_path = "waste_classification_model.h5"
 
 # Download and cache the model
@@ -82,4 +82,5 @@ st.markdown(
     "<hr><p style='text-align: center; color: gray;'>🚀 Developed with ❤️ using TensorFlow & Streamlit</p>",
     unsafe_allow_html=True
 )
+
 
